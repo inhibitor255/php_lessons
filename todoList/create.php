@@ -6,7 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Create</h1>
+    <h1>Todo List</h1>
+    <a href="./read.php">Lists</a>
+    <br>
     <form action="" method="POST">
         <label for="name">Name</label>
         <input type="text" name="taskName" id="name" placeholder="Enter your tasks in here">
@@ -25,7 +27,7 @@
                 $sql = "INSERT INTO work (name) VALUES ('$taskName')";
 
                 if(mysqli_query($conn,$sql)){
-                    echo "<small style='color: green;'>Insert Success</small>";
+                    header("location:./read.php");
                 }else{
                     echo "query fail";
                 }

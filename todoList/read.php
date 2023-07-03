@@ -7,13 +7,15 @@
 </head>
 <body>
     <h1>Tasks List</h1>
+    <a href="./create.php">Creat Page</a>
+    <br>
     <table border="1">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Date</th>
-                <th></th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -31,16 +33,17 @@
                 require_once("./db_connection.php");
                 $sql = "SELECT * FROM work";
                 $query = mysqli_query($conn,$sql);
-
+                
                 while ($row = mysqli_fetch_assoc($query)) {
+                    $time = date('d:m:Y g:i:a',strtotime($row['created_at']));
                     echo "
                     <tr>
-                        <td>$row[id]</td>
-                        <td>$row[name]</td>
-                        <td>$row[created_at]</td>
+                        <td>{$row['id']}</td>
+                        <td>{$row['name']}</td>
+                        <td>{$time}</td>
                         <td>
-                            <a href=''>Update</a> |
-                            <a href=''>Delete</a>
+                            <a href='./update.php?id={$row['id']}'>Update</a> |
+                            <a href='./delete.php?id={$row['id']}'>Delete</a>
                         </td>
                     </tr>
                     ";

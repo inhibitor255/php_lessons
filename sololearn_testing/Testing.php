@@ -1,24 +1,19 @@
-<?php
-    $a=1;
-    echo $a++;
-    echo ++$a;
-    echo "<br>";
-
-    define("MSG","Hello World!");
-
-    echo MSG;
-    print MSG;
-
-    $score = 1234;
-    $scoreboard = (array) $score;
-    var_dump($scoreboard[0]) ;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Ha! First day of learning HTML is super ez</h1>
+    <p>Br ll dr ka paragraph</p>
+    <img src="" alt="dr ka image copy u p htae ya tr"> 
+    <button>Meow</button>
+    <button>Woof</button>
+</body>
+</html>
 
     
-    $total = "25 students";
-    $more = 10;
-    $total = $total + $more;
-    echo "$total";
-    
-    $new2 = "Main different commit";
 
-?>
